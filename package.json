@@ -9,15 +9,29 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onView:home"],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "leetcode-practice-vscode.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [],
+      "panel": [],
+      "sidebar": [
+        {
+          "id": "leetcode-practice",
+          "title": "leetcode-practice",
+          "icon": "resources/logo.webp"
+        }
+      ]
+    },
+    "views": {
+      "leetcode-practice": [
+        {
+          "id": "home",
+          "name": "Leetcode Practice"
+        }
+      ]
+    },
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
