@@ -9,25 +9,22 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["onView:home"],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
-      "activitybar": [],
-      "panel": [],
-      "sidebar": [
+      "activitybar": [
         {
-          "id": "leetcode-practice",
-          "title": "leetcode-practice",
-          "icon": "resources/logo.webp"
+          "id": "home",
+          "title": "Leetcode Practice",
+          "icon": "resources/lc.svg"
         }
       ]
     },
     "views": {
-      "leetcode-practice": [
+      "home": [
         {
           "id": "home",
-          "name": "Leetcode Practice"
+          "name": "首页"
         }
       ]
     },

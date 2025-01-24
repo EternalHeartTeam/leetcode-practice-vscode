@@ -10,15 +10,26 @@ export class HomeProvider implements vscode.TreeDataProvider<any>{
 
     getChildren(element?: TreeItem): TreeItem[] {
         if (!element) {
-            return [new TreeItem('Item 1'), new TreeItem('Item 2')];
+            return [
+                new TreeItem('lc', 'lc'),
+                new TreeItem('lk', 'lk'),
+                new TreeItem('lf', 'lf'),
+                new TreeItem('我的收藏')
+            ];
         }
         return [];
     }
 }
+
 class TreeItem extends vscode.TreeItem {
-    constructor(label: string) {
+    constructor(label: string, private cmd?: string) {
         super(label);
-        this.tooltip = `Tooltip for ${label}`;
-        this.description = `Description of ${label}`;
+        if(cmd){
+            this.command = {
+                command: `leetcode.${this.cmd}`,
+                title: label,
+            };
+        }
     }
+
 }
